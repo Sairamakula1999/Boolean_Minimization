@@ -5,6 +5,6 @@ Simplifying boolean function is one of the basics in digital electronics. Quinin
 ## Output
 
 <p align="center">
-<img src="imag/out.png" width =800 height= 5000>
+<img src="imag/out.png" width =500 height= 1000>
 </p>
 
