@@ -109,16 +109,12 @@ vector<string> reduce(vector<string> minterms, vector<int> &group,vector<vector<
        int count=0;
       if(group.size()<3){
          for(int i=0;i<max;i++){
-          for(int j=i;j<max;j++)
-          { //If a grey code pair is found, replace the differing bits with don't cares.
-               if(isGreyCode(minterms[i],minterms[j]))
-               {
+          for(int j=i;j<max;j++) { //If a grey code pair is found, replace the differing bits with don't cares. if minterm reduced is alreary present then not add it
+               if(isGreyCode(minterms[i],minterms[j]){
                   checked[i]=1;
                   checked[j]=1;
                   if(!in_vector(newminterms,replace_complements(minterms[i],minterms[j]))){
                      newminterms.push_back(replace_complements(minterms[i],minterms[j]));
-                   // cout<<newminterms[newminterms.size()-1]<<" o "<<endl;
-                     
                   }
                }
           }
@@ -126,13 +122,10 @@ vector<string> reduce(vector<string> minterms, vector<int> &group,vector<vector<
       }
       else{
       while(i<group.size()-2){
-        for(int j=group[i];j<group[i+1];j++)
-        {
-            for(int k=group[i+1];k<group[i+2];k++)
-            { 
+        for(int j=group[i];j<group[i+1];j++){
+            for(int k=group[i+1];k<group[i+2];k++){ 
                 //If a gray code pair is found, replace the differing bits with don't cares.
-                if(isGreyCode(minterms[j],minterms[k]))
-                {
+                if(isGreyCode(minterms[j],minterms[k])){
                     checked[j]=1;
                     checked[k]=1;
                     if(!in_vector(newminterms,replace_complements(minterms[j],minterms[k]))){
