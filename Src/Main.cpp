@@ -100,7 +100,7 @@ vector<string> reduce(vector<string> minterms, vector<int> &group,vector<vector<
 {
     vector<string> newminterms;
     vector<vector<int>> newterm;
-    newterm.resize(minterms.size()*minterms.size()/4  );
+    newterm.resize(minterms.size()*minterms.size()/2  );
       int max=minterms.size();
       vector<int>checked (max,0);
       int i=0;
@@ -290,7 +290,7 @@ int main ()
     // here all groups are checcked until no gray code is left to combine
       do{
          minterms=q.reduce(minterms,group,terms);
-      }while(group[1]!=0);
+      }while(!(group.size()<2 || group[group.size()-1]==0));
       cout << "The reduced boolean expression in SOP form before table reduced:" << endl;
       q.print_minterms(minterms);
       cout<<endl;
